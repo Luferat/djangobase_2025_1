@@ -1,0 +1,17 @@
+{# cadastro\templates\cadastro\index.html #}
+
+{% extends 'cadastro/base.html' %}
+
+{% block titulo %}Início{% endblock %}
+
+{% block conteudo %}
+    <h2>Olá, {{ nome }}! 🚀</h2>
+    <p>Você tem {{ idade }} anos.</p>
+
+    <h2>Frutas:</h2>
+    <ul>
+        {% for fruta in frutas %}
+            <li>{{ fruta }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
