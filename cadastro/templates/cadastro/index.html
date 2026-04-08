@@ -5,7 +5,7 @@
 {% block titulo %}Início{% endblock %}
 
 {% block conteudo %}
-   <h2>Pessoas Cadastradas</h2>
+   <h2>{{ total }} Pessoas Cadastradas</h2>
    <ul>
     {% for pessoa in pessoas %}
         <li>{{ pessoa.nome }}</li>
