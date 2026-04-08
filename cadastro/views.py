@@ -2,11 +2,16 @@
 
 from django.shortcuts import render
 
+from cadastro.models import Pessoa
+
 def index(request):
+
+    # Recebe todas as "Pessoa" do banco de dados
+    pessoas = Pessoa.objects.all()
+
     contexto = {
-        'nome': 'Joca',
-        'idade': 30,
-        'frutas': ['Maçã', 'Banana', 'Laranja', 'Uva'],
+        # Passa todas as "Pessoa" para o template
+        'pessoas': pessoas,
         'dono': 'Joca da Silva',
     }
     return render(request, 'cadastro/index.html', contexto)
