@@ -19,16 +19,12 @@ def index(request):
         # Passa todas as "Pessoa" para o template
         'pessoas': pessoas,
         'total': total,
-        'dono': 'Joca da Silva',
     }
     return render(request, 'cadastro/index.html', contexto)
 
 
 def contato(request):
-    contexto = {
-        'dono': 'Joca da Silva',
-    }
-    return render(request, 'cadastro/contato.html', contexto)
+    return render(request, 'cadastro/contato.html')
 
 # Processa o formulário de cadastro de pessoas
 def adicionar(request):
@@ -39,4 +35,7 @@ def adicionar(request):
             return redirect('index')
     else:
         form = PessoaForm()
-    return render(request, 'cadastro/adicionar.html', {'form': form})
+        contexto = {
+            'form': form,
+        }
+    return render(request, 'cadastro/adicionar.html', contexto)
